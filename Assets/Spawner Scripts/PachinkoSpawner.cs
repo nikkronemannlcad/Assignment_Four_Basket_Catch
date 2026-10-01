@@ -13,7 +13,7 @@ public class PachinkoSpawner : MonoBehaviour
        
     private void SpawnPachinko()
     {
-        Vector3 randomPos = new Vector3( Random.Range(-spawnRange, spawnRange), 30, 0 );
+        Vector3 randomPos = new Vector3( Random.Range(-spawnRange, spawnRange), 45, 0 );
 
         Instantiate( pachinkoPrefab, randomPos, Quaternion.identity );
     }
