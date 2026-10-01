@@ -7,7 +7,6 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] TMP_Text scoreText;
     private int score = 0;
-
     public void AddScore()
     {
         score++;
@@ -18,9 +17,13 @@ public class ScoreManager : MonoBehaviour
 
     public void CheckForWin()
     {
-        if (score == 15)
+        if (score == 15 && SceneManager.GetActiveScene().name == "LevelOne")
         {
             SceneManager.LoadScene("LevelOneTransition");
+        }
+        else if (score == 20 && SceneManager.GetActiveScene().name == "LevelTwo")
+        {
+            SceneManager.LoadScene("WinScreen");
         }
     }
 }

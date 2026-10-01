@@ -3,6 +3,8 @@ using UnityEngine;
 public class PachinkoCatch : MonoBehaviour
 {
     [SerializeField] private int coinValue = 1;
+    [SerializeField] private AudioClip pickupSoundClip;
+
     private ScoreManager scoreManager;
 
     private void Start()
@@ -15,6 +17,7 @@ public class PachinkoCatch : MonoBehaviour
         {
             AddToScore();
             Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(pickupSoundClip, transform.position, 1f);
         }
         else if (other.CompareTag("Base"))
         {
